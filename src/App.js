@@ -52,6 +52,18 @@ crossorigin="anonymous"/>
             <br></br>
           </div>
 
+          <div class='col-md-6 offset-md-9'>
+            <div class='text-center'> 
+              <p>Mode automatique</p>
+              <input type='submit' class="btn btn-outline-secondary btn-sm" value='Activer'></input> 
+              <input type='submit' class="btn btn-outline-secondary btn-sm" value='Désactiver'></input>
+            </div> 
+          </div>
+
+          <div class="row-2">
+            <br></br>
+          </div>
+
           <div class="row justify-content-center">
 
               <div class="col-4 border border-dark">
