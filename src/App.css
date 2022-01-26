@@ -29,6 +29,7 @@
 }
 
 .App-piece {
+  position: relative;
   background-color: #b9c8e1;
   min-height: 7vh;
   display: flex;
@@ -37,6 +38,7 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: black;
+  width: 100%;
 }
 
 /* On définit les blocs */
