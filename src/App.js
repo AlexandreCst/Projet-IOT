@@ -8,47 +8,19 @@ function App() {
 
       // On récupère l'état des lumières
 
-
-      const req = async () => {
-        const response = await axios.get('https://dog.ceo/api/breeds/list/all')
-        console.log(response)
-      }
-      req() // Calling this will make a get request and log the response.
+    // useEffect nous permettra de déclencher le fetch; useState permettra de stocker le retour de l'API dans le state 
       
-      // var etat = null ;
+    const [etat, setEtat] = useState ([]) ;
 
-      // axios.get("http://172.20.8.176:8080/maison/light")
-      // .then(function (response) {
-      //   console.log(response);
-      //   etat = response.data ;
-      //   setResult(response.data)
-      // });
-
-      // console.log("wololo")
-      // console.log(etat)
-
-
-      // etat = JSON.parse(etat)
-
-      // console.log('oui')
-      // console.log(etat)
-   
-      // cuis = etat.Cuisine;
-      // sal = etat['Salon'] ;
-
-      // console.log(yep)
-      // console.log(cuis)
-
-      
-
-    
-    // // On récupère l'état des volets
-
-    // axios.get("http://172.20.8.176:5000/maison/rideaux")
-    // .then(function (response) {
-    // console.log(response);
-    // var etat = response.data ;
-    // });
+      useEffect(() => {
+          fetch("http://172.23.11.52:8080/maison/light").then(response =>
+            response.json().then(data => {
+              setEtat(data);
+              console.log('debut');
+              console.log(etat);
+            })
+          );
+      },[]);
   
   return (
 
@@ -67,7 +39,6 @@ crossorigin="anonymous"/>
         {/* <button type="button" class="btn">vdkehdl</button> */}
 
 
-
         <div className="App-header">
           <p>Ma Maison Connectée</p>
         </div>
@@ -83,33 +54,27 @@ crossorigin="anonymous"/>
 
           <div class="row justify-content-center">
 
-            <span class="border border-dark">
-              <div class="col">
-                <LightRoom roomId='1' name="Chambre 1" etat='mettre etat'></LightRoom>
+              <div class="col-4 border border-dark">
+                  <LightRoom roomId='1' name="Chambre 1" etatlum={etat['Chambre1']}></LightRoom>
               </div>
-            </span>
 
-            <span class="border border-dark">
-              <div class="col">
-                <LightRoom roomId='2' name="Chambre 2" etat='mettre etat'></LightRoom>
+              <div class="col-4 border border-dark">
+                <LightRoom roomId='2' name="Chambre 2" etatlum={etat['Chambre2']}></LightRoom>
               </div>
-            </span>
 
           </div>
 
           <div class="row justify-content-center">
 
-            <span class="border border-dark">
-              <div class="col">
-                <LightRoom roomId='3' name="Cuisine" etat='mettre etat'></LightRoom>
-              </div>
-            </span>
+            <div class="col-4 border border-dark">
+              <LightRoom roomId='3' name="Cuisine" etatlum={etat['Cuisine']}></LightRoom>
+            </div>
 
-            <span class="border border-dark">
-              <div class="col">
-                <LightRoom roomId='4' name="Salon" etat='mettre etat'></LightRoom>
-              </div>
-            </span>
+
+            <div class="col-4 border border-dark">
+              <LightRoom roomId='4' name="Salon" etatlum={etat['Salon']}></LightRoom>
+            </div>
+
 
           </div>
 
