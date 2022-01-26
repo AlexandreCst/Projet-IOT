@@ -7,13 +7,11 @@ import React, {useState, useEffect} from 'react'
 function App() {
 
       // On récupère l'état des lumières
-
-
-      const req = async () => {
-        const response = await axios.get('https://dog.ceo/api/breeds/list/all')
-        console.log(response)
-      }
-      req() // Calling this will make a get request and log the response.
+      //const req = async () => {
+        //const response = await axios.get('https://dog.ceo/api/breeds/list/all')
+        //console.log(response)
+      //}
+      //req() // Calling this will make a get request and log the response.
       
       // var etat = null ;
 
@@ -49,6 +47,15 @@ function App() {
     // console.log(response);
     // var etat = response.data ;
     // });
+
+    var chambre1_URL = "http://172.23.11.52:8080/maison/light/3/1"; // Chambre 1
+    var chambre2_URL = "http://172.23.11.52:8080/maison/light/5/toggle"; // Chambre 2
+    var cuisine_URL = "http://172.23.11.52:8080/maison/light/7/toggle"; // Cuisine
+    var salon_URL = "http://172.23.11.52:8080/maison/light/11/toggle"; //Salon
+
+    axios.post(chambre1_URL)
+    .then(data => console.log(data))
+    .catch(data => console.log('error', data));
   
   return (
 
