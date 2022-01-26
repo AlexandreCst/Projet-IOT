@@ -36,10 +36,17 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: 100%;
   color: black;
   width: 100%;
+  width: 10px;
 }
+
+.position {
+  margin-bottom: 15px;
+  margin-left: 4px;
+}
+
 
 /* On définit les blocs */
 

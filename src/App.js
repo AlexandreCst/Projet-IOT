@@ -102,11 +102,11 @@ crossorigin="anonymous"/>
             <br></br>
           </div>
 
-          <div class='col-md-6 offset-md-9'>
+          <div class='col-md-2 offset-md-11 border border-dark'>
             <div class='text-center'> 
               <p>Mode automatique</p>
-              <input type='submit' class="btn btn-outline-secondary btn-sm" value='Activer'></input> 
-              <input type='submit' class="btn btn-outline-secondary btn-sm" value='Désactiver'></input>
+              <input type='submit' class="btn btn-outline-secondary btn-sm position" value='Activer'></input> 
+              <input type='submit' class="btn btn-outline-secondary btn-sm position" value='Désactiver'></input>
             </div> 
           </div>
 
