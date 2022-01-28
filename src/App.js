@@ -86,15 +86,9 @@ crossorigin="anonymous"/>
 
       <body>
 
-        {/* <button type="button" class="btn">vdkehdl</button> */}
-
-
         <div className="App-header">
           <p>Ma Maison Connectée</p>
         </div>
-
-        {/* <h1 className="App-piece">{etat} </h1> */}
-
 
         <div class="container">
 
@@ -116,11 +110,11 @@ crossorigin="anonymous"/>
 
           <div class="row justify-content-center">
 
-              <div class="col-4 border border-dark">
+              <div class="col-4 border border-dark" style={{'paddingLeft':"0", 'paddingRight':"0"}}>
                   <LightRoom roomId='1' name="Chambre 1" etatlum={etat['Chambre1']}></LightRoom>
               </div>
 
-              <div class="col-4 border border-dark">
+              <div class="col-4 border border-dark" style={{'paddingLeft':"0", 'paddingRight':"0"}}>
                 <LightRoom roomId='2' name="Chambre 2" etatlum={etat['Chambre2']}></LightRoom>
               </div>
 
@@ -128,12 +122,12 @@ crossorigin="anonymous"/>
 
           <div class="row justify-content-center">
 
-            <div class="col-4 border border-dark">
+            <div class="col-4 border border-dark" style={{'paddingLeft':"0", 'paddingRight':"0"}}>
               <LightRoom roomId='3' name="Cuisine" etatlum={etat['Cuisine']}></LightRoom>
             </div>
 
 
-            <div class="col-4 border border-dark">
+            <div class="col-4 border border-dark" style={{'paddingLeft':"0", 'paddingRight':"0"}}>
               <LightRoom roomId='4' name="Salon" etatlum={etat['Salon']}></LightRoom>
             </div>
 
