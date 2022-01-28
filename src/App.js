@@ -13,7 +13,7 @@ function App() {
       const [etat, setEtat] = useState ([]) ;
 
       useEffect(() => {
-          fetch("http://172.20.8.176:8080/maison/light").then(response =>
+          fetch("http://172.20.8.176:5000/maison/light").then(response =>
             response.json().then(data => {
               setEtat(data);
               console.log('debut');
@@ -53,8 +53,8 @@ function App() {
  
     //Gestion du mode automatique
 
-    var mode_automatique = "http://172.20.8.176:8080/maison/auto/1"; // activation du mode auto
-    var mode_manuel = "http://172.20.8.176:8080/maison/auto/0"; // désactivation du mode auto
+    var mode_automatique = "http://172.20.8.176:5000/maison/auto/1"; // activation du mode auto
+    var mode_manuel = "http://172.20.8.176:5000/maison/auto/0"; // désactivation du mode auto
 
   return (
 
