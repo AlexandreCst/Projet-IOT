@@ -13,7 +13,7 @@ function App() {
       const [etat, setEtat] = useState ([]) ;
 
       useEffect(() => {
-          fetch("http://172.20.8.176:5000/maison/light").then(response =>
+          fetch("http://172.20.8.176:8080/maison/light").then(response =>
             response.json().then(data => {
               setEtat(data);
               console.log('debut');
@@ -29,25 +29,28 @@ function App() {
     //On récupère les URL pour la gestion des lumières
 
     //var ip = "http://172.20.8.176:8080/maison/"
-    var chambre1_lon = "http://172.20.8.176:5000/maison/light/3/1"; // Led Chambre 1
-    var chambre2_lon = "http://172.20.8.176:5000/maison/light/5/1"; // Led Chambre 2
-    var cuisine_lon = "http://172.20.8.176:5000/maison/light/7/1"; // Led Cuisine
-    var salon_lon = "http://172.20.8.176:5000/maison/light/11/1"; //Led Salon
+    var chambre1_lon = "http://172.20.8.176:8080/maison/light/3/1"; // Led Chambre 1
+    var chambre2_lon = "http://172.20.8.176:8080/maison/light/5/1"; // Led Chambre 2
+    var cuisine_lon = "http://172.20.8.176:8080/maison/light/7/1"; // Led Cuisine
+    var salon_lon = "http://172.20.8.176:8080/maison/light/11/1"; //Led Salon
 
-    var chambre1_loff = "http://172.20.8.176:5000/maison/light/3/0"; // Led Chambre 1
-    var chambre2_loff = "http://172.20.8.176:5000/maison/light/5/0"; // Led Chambre 2
-    var cuisine_loff = "http://172.20.8.176:5000/maison/light/7/0"; // Led Cuisine
-    var salon_loff = "http://172.20.8.176:5000/maison/light/11/0"; // Led Salon
+    var chambre1_loff = "http://172.20.8.176:8080/maison/light/3/0"; // Led Chambre 1
+    var chambre2_loff = "http://172.20.8.176:8080/maison/light/5/0"; // Led Chambre 2
+    var cuisine_loff = "http://172.20.8.176:8080/maison/light/7/0"; // Led Cuisine
+    var salon_loff = "http://172.20.8.176:8080/maison/light/11/0"; // Led Salon
 
-    var chambre1_von = "http://172.20.8.176:5000/maison/rideaux/3/1"; // Volet Chambre 1
-    var chambre2_von = "http://172.20.8.176:5000/maison/rideaux/5/1"; // Volet Chambre 2
-    var cuisine_von = "http://172.20.8.176:5000/maison/rideaux/7/1"; // Volet Cuisine
-    var salon_von = "http://172.20.8.176:5000/maison/rideaux/11/1"; // Volet Salon
+    var chambre1_von = "http://172.20.8.176:8080/maison/rideaux//1"; // Volet Chambre 1
+    var chambre2_von = "http://172.20.8.176:8080/maison/rideaux/5/1"; // Volet Chambre 2
+    var cuisine_von = "http://172.20.8.176:8080/maison/rideaux/7/1"; // Volet Cuisine
+    var salon_von = "http://172.20.8.176:8080/maison/rideaux/11/1"; // Volet Salon
 
-    var chambre1_voff = "http://172.20.8.176:5000/maison/rideaux/3/0"; // Volet Chambre 1
-    var chambre2_voff = "http://172.20.8.176:5000/maison/rideaux/5/0"; // Volet Chambre 2
-    var cuisine_voff = "http://172.20.8.176:5000/maison/rideaux/7/0"; // Volet Cuisine
-    var salon_voff = "http://172.20.8.176:5000/maison/rideaux/11/0"; // Volet Salon
+    var chambre1_voff = "http://172.20.8.176:8080/maison/rideaux/3/0"; // Volet Chambre 1
+    var chambre2_voff = "http://172.20.8.176:8080/maison/rideaux/5/0"; // Volet Chambre 2
+    var cuisine_voff = "http://172.20.8.176:8080/maison/rideaux/7/0"; // Volet Cuisine
+    var salon_voff = "http://172.20.8.176:8080/maison/rideaux/11/0"; // Volet Salon
+
+    var mode_automatique = "http://172.20.8.176:8080/maison/auto/1"; // activation du mode auto
+    var mode_manuel = "http://172.20.8.176:8080/maison/auto/0"; // désactivation du mode auto
 
     // axios.post(chambre2_URL)
     // .then(data => console.log(data))
@@ -82,8 +85,8 @@ crossorigin="anonymous"/>
           <div class='col-md-2 offset-md-11 border border-dark' style={{'right':'15px'}}>
             <div class='text-center'> 
               <p>Mode automatique</p>
-              <input type='submit' class="btn btn-outline-secondary btn-sm position" value='Activer'></input> 
-              <input type='submit' class="btn btn-outline-secondary btn-sm position" value='Désactiver'></input>
+              <input type='submit' class="btn btn-outline-secondary btn-sm position" value='Activer' onClick={() => axios.post(mode_automatique)}></input> 
+              <input type='submit' class="btn btn-outline-secondary btn-sm position" value='Désactiver' onClick={() => axios.post(mode_manuel)}></input>
             </div> 
           </div>
 
