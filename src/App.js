@@ -48,11 +48,11 @@ function App() {
     // console.log(response);
     // var etat = response.data ;
     // });
-
-    var chambre1_URL = "http://172.23.11.52:8080/maison/light/3/1"; // Chambre 1
-    var chambre2_URL = "http://172.23.11.52:8080/maison/light/5/toggle"; // Chambre 2
-    var cuisine_URL = "http://172.23.11.52:8080/maison/light/7/toggle"; // Cuisine
-    var salon_URL = "http://172.23.11.52:8080/maison/light/11/toggle"; //Salon
+    //var ip = "http://172.20.8.176:8080/maison/"
+    var chambre1_URL = "http://172.20.8.176:8080/maison/light/3/1"; // Chambre 1
+    var chambre2_URL = "http://172.20.8.176:8080/maison/light/5/toggle"; // Chambre 2
+    var cuisine_URL = "http://172.20.8.176:8080/maison/light/7/toggle"; // Cuisine
+    var salon_URL = "http://172.20.8.176:8080/maison/light/11/toggle"; //Salon
 
     axios.post(chambre1_URL)
     .then(data => console.log(data))
