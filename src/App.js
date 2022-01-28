@@ -13,7 +13,7 @@ function App() {
       const [etat, setEtat] = useState ([]) ;
 
       useEffect(() => {
-          fetch("http://172.20.8.176:5000/maison/light").then(response =>
+          fetch("http://172.20.8.176:8080/maison/light").then(response =>
             response.json().then(data => {
               setEtat(data);
               console.log('debut');
@@ -50,12 +50,11 @@ function App() {
     var chambre2_voff = "http://172.20.8.176:5000/maison/rideaux/2/0"; // Volet Chambre 2
     var cuisine_voff = "http://172.20.8.176:5000/maison/rideaux/3/0"; // Volet Cuisine
     var salon_voff = "http://172.20.8.176:5000/maison/rideaux/4/0"; // Volet Salon
+ 
+    //Gestion du mode automatique
 
-    // axios.post(chambre2_URL)
-    // .then(data => console.log(data))
-    // .catch(data => console.log('error', data));   
-
-    // axios.post(cuisine_URL)
+    var mode_automatique = "http://172.20.8.176:8080/maison/auto/1"; // activation du mode auto
+    var mode_manuel = "http://172.20.8.176:8080/maison/auto/0"; // désactivation du mode auto
 
   return (
 
@@ -84,8 +83,8 @@ crossorigin="anonymous"/>
           <div class='col-md-2 offset-md-11 border border-dark' style={{'right':'15px'}}>
             <div class='text-center'> 
               <p>Mode automatique</p>
-              <input type='submit' class="btn btn-outline-secondary btn-sm position" value='Activer'></input> 
-              <input type='submit' class="btn btn-outline-secondary btn-sm position" value='Désactiver'></input>
+              <input type='submit' class="btn btn-outline-secondary btn-sm position" value='Activer' onClick={() => axios.post(mode_automatique)}></input> 
+              <input type='submit' class="btn btn-outline-secondary btn-sm position" value='Désactiver' onClick={() => axios.post(mode_manuel)}></input>
             </div> 
           </div>
 
