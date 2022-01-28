@@ -39,15 +39,17 @@ function App() {
     var cuisine_loff = "http://172.20.8.176:5000/maison/light/7/0"; // Led Cuisine
     var salon_loff = "http://172.20.8.176:5000/maison/light/11/0"; // Led Salon
 
-    var chambre1_von = "http://172.20.8.176:5000/maison/rideaux/3/1"; // Volet Chambre 1
-    var chambre2_von = "http://172.20.8.176:5000/maison/rideaux/5/1"; // Volet Chambre 2
-    var cuisine_von = "http://172.20.8.176:5000/maison/rideaux/7/1"; // Volet Cuisine
-    var salon_von = "http://172.20.8.176:5000/maison/rideaux/11/1"; // Volet Salon
+    //On récupère les URL pour la gestion des lumières
 
-    var chambre1_voff = "http://172.20.8.176:5000/maison/rideaux/3/0"; // Volet Chambre 1
-    var chambre2_voff = "http://172.20.8.176:5000/maison/rideaux/5/0"; // Volet Chambre 2
-    var cuisine_voff = "http://172.20.8.176:5000/maison/rideaux/7/0"; // Volet Cuisine
-    var salon_voff = "http://172.20.8.176:5000/maison/rideaux/11/0"; // Volet Salon
+    var chambre1_von = "http://172.20.8.176:5000/maison/rideaux/1/1"; // Volet Chambre 1
+    var chambre2_von = "http://172.20.8.176:5000/maison/rideaux/2/1"; // Volet Chambre 2
+    var cuisine_von = "http://172.20.8.176:5000/maison/rideaux/3/1"; // Volet Cuisine
+    var salon_von = "http://172.20.8.176:5000/maison/rideaux/4/1"; // Volet Salon
+
+    var chambre1_voff = "http://172.20.8.176:5000/maison/rideaux/1/0"; // Volet Chambre 1
+    var chambre2_voff = "http://172.20.8.176:5000/maison/rideaux/2/0"; // Volet Chambre 2
+    var cuisine_voff = "http://172.20.8.176:5000/maison/rideaux/3/0"; // Volet Cuisine
+    var salon_voff = "http://172.20.8.176:5000/maison/rideaux/4/0"; // Volet Salon
 
     // axios.post(chambre2_URL)
     // .then(data => console.log(data))
@@ -98,11 +100,11 @@ crossorigin="anonymous"/>
             <div class="col-4 border border-dark" style={{'paddingLeft':"0", 'paddingRight':"0"}}>
                 <LightRoom roomId='1' name="Chambre 1" etatlum={etat['Chambre1']} urlOn='chambre1_on' urlOff='chambre1_off'></LightRoom>
                 <div class="row">
-                <div class="col">
+                <div class="col" style={{'textAlign':'center'}}>
                   <input type='submit' class="btn btn-outline-secondary btn-sm position" value='Allumer' onClick={() => axios.post(chambre1_lon)}></input>
-                  <input type='submit' class="btn btn-outline-secondary btn-sm position" value='Eteindre' onClick={() => axios.post(chambre2_loff)}></input>
+                  <input type='submit' class="btn btn-outline-secondary btn-sm position" value='Eteindre' onClick={() => axios.post(chambre1_loff)}></input>
                 </div>
-                <div class="col">
+                <div class="col" style={{'textAlign':'center'}}>
                   <input type='submit' class="btn btn-outline-secondary btn-sm position" value='Allumer' onClick={() => axios.post(chambre1_von)}></input>
                   <input type='submit' class="btn btn-outline-secondary btn-sm position" value='Eteindre' onClick={() => axios.post(chambre1_voff)}></input>
                 </div>
@@ -115,11 +117,11 @@ crossorigin="anonymous"/>
               <LightRoom roomId='2' name="Chambre 2" etatlum={etat['Chambre2']}></LightRoom>
               
               <div class="row">
-                <div class="col">
+                <div class="col" style={{'textAlign':'center'}}>
                   <input type='submit' class="btn btn-outline-secondary btn-sm position" value='Allumer' onClick={() => axios.post(chambre2_lon)}></input>
                   <input type='submit' class="btn btn-outline-secondary btn-sm position" value='Eteindre' onClick={() => axios.post(chambre2_loff)}></input>
                 </div>
-                <div class="col">
+                <div class="col" style={{'textAlign':'center'}}>
                   <input type='submit' class="btn btn-outline-secondary btn-sm position" value='Allumer' onClick={() => axios.post(chambre2_von)}></input>
                   <input type='submit' class="btn btn-outline-secondary btn-sm position" value='Eteindre' onClick={() => axios.post(chambre2_von)}></input>
                 </div>
@@ -135,11 +137,11 @@ crossorigin="anonymous"/>
             <div class="col-4 border border-dark" style={{'paddingLeft':"0", 'paddingRight':"0"}}>
               <LightRoom roomId='3' name="Cuisine" etatlum={etat['Cuisine']}></LightRoom>
               <div class="row">
-                  <div class="col">
+                  <div class="col" style={{'textAlign':'center'}}>
                     <input type='submit' class="btn btn-outline-secondary btn-sm position" value='Allumer' onClick={() => axios.post(cuisine_lon)}></input>
                     <input type='submit' class="btn btn-outline-secondary btn-sm position" value='Eteindre' onClick={() => axios.post(cuisine_voff)}></input>
                   </div>
-                  <div class="col">
+                  <div class="col" style={{'textAlign':'center'}}>
                     <input type='submit' class="btn btn-outline-secondary btn-sm position" value='Allumer' onClick={() => axios.post(cuisine_von)}></input>
                     <input type='submit' class="btn btn-outline-secondary btn-sm position" value='Eteindre' onClick={() => axios.post(cuisine_voff)}></input>
                   </div>
@@ -151,11 +153,11 @@ crossorigin="anonymous"/>
             <div class="col-4 border border-dark" style={{'paddingLeft':"0", 'paddingRight':"0"}}>
               <LightRoom roomId='4' name="Salon" etatlum={etat['Salon']}></LightRoom>
               <div class="row">
-                  <div class="col">
+                  <div class="col" style={{'textAlign':'center'}}>
                     <input type='submit' class="btn btn-outline-secondary btn-sm position" value='Allumer' onClick={() => axios.post(salon_lon)}></input>
                     <input type='submit' class="btn btn-outline-secondary btn-sm position" value='Eteindre' onClick={() => axios.post(salon_loff)}></input>
                   </div>
-                  <div class="col">
+                  <div class="col" style={{'textAlign':'center'}}>
                     <input type='submit' class="btn btn-outline-secondary btn-sm position" value='Allumer' onClick={() => axios.post(salon_von)}></input>
                     <input type='submit' class="btn btn-outline-secondary btn-sm position" value='Eteindre' onClick={() => axios.post(salon_voff)}></input>
                   </div>
