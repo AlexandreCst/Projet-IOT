@@ -70,8 +70,10 @@ crossorigin="anonymous"/>
 
       <body>
 
-        <div className="App-header">
-          <p>Ma Maison Connectée</p>
+        <div className="App-header" style={{'paddingBlockEnd':'15px'}}> 
+          <p style={{'fontVariant':'small-caps','fontSize':'20pt'}}>Ma Maison Connectée</p>
+          <img src='https://cdn-icons.flaticon.com/png/512/2668/premium/2668334.png?token=exp=1643620929~hmac=6579c27a12d50911c5c414ca8a9f8f5a' width='60px'/>
+          <br></br>
         </div>
 
         <div class="container">
