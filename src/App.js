@@ -193,7 +193,7 @@ function App() {
             <div class="col" />
 
             <div
-              class="col-md-auto offset-md-4 border border-dark"
+              class="col-md-auto border border-dark"
               style={{ right: "3px" }}
             >
               <div class="text-center" style={{ alignContent: "center" }}>
@@ -229,7 +229,7 @@ function App() {
 
             <div
               class="col-md-auto border border-dark"
-              style={{ paddingLeft: "0", paddingRight: "0", width: "360px" }}
+              style={{ paddingLeft: "0", paddingRight: "0", width: "400px" }}
             >
               <LightRoom
                 roomId="1"
@@ -260,6 +260,9 @@ function App() {
                         });
                       }}
                     ></input>
+                    <br />
+                    <br />
+                    <p> Mode automatique </p>
                   </div>
                   <div class="col" style={{ textAlign: "center" }}>
                     <input
@@ -282,6 +285,28 @@ function App() {
                         });
                       }}
                     ></input>
+                    <br />
+                    <br />
+                    <input
+                      type="submit"
+                      class="btn btn-outline-secondary btn-sm position"
+                      value="Activer"
+                      onClick={() => {
+                        axios.post(chambre1_loff).then(() => {
+                          init_lum();
+                        });
+                      }}
+                    />
+                    <input
+                      type="submit"
+                      class="btn btn-outline-secondary btn-sm position"
+                      value="Désactiver"
+                      onClick={() => {
+                        axios.post(chambre1_loff).then(() => {
+                          init_lum();
+                        });
+                      }}
+                    />
                   </div>
                 </div>
               </div>
@@ -291,7 +316,7 @@ function App() {
 
             <div
               class="col-md-auto  border border-dark"
-              style={{ paddingLeft: "0", paddingRight: "0", width: "360px" }}
+              style={{ paddingLeft: "0", paddingRight: "0", width: "400px" }}
             >
               <LightRoom
                 roomId="2"
@@ -322,6 +347,9 @@ function App() {
                         });
                       }}
                     ></input>
+                    <br />
+                    <br />
+                    <p> Mode automatique </p>
                   </div>
                   <div class="col" style={{ textAlign: "center" }}>
                     <input
@@ -344,6 +372,28 @@ function App() {
                         });
                       }}
                     ></input>
+                    <br />
+                    <br />
+                    <input
+                      type="submit"
+                      class="btn btn-outline-secondary btn-sm position"
+                      value="Activer"
+                      onClick={() => {
+                        axios.post(chambre1_loff).then(() => {
+                          init_lum();
+                        });
+                      }}
+                    />
+                    <input
+                      type="submit"
+                      class="btn btn-outline-secondary btn-sm position"
+                      value="Désactiver"
+                      onClick={() => {
+                        axios.post(chambre1_loff).then(() => {
+                          init_lum();
+                        });
+                      }}
+                    />
                   </div>
                 </div>
               </div>
@@ -355,7 +405,7 @@ function App() {
 
             <div
               class="col-md-auto border border-dark"
-              style={{ paddingLeft: "0", paddingRight: "0", width: "360px" }}
+              style={{ paddingLeft: "0", paddingRight: "0", width: "400px" }}
             >
               <LightRoom
                 roomId="3"
@@ -386,6 +436,9 @@ function App() {
                         });
                       }}
                     ></input>
+                    <br />
+                    <br />
+                    <p> Mode automatique </p>
                   </div>
                   <div class="col" style={{ textAlign: "center" }}>
                     <input
@@ -408,6 +461,28 @@ function App() {
                         });
                       }}
                     ></input>
+                    <br />
+                    <br />
+                    <input
+                      type="submit"
+                      class="btn btn-outline-secondary btn-sm position"
+                      value="Activer"
+                      onClick={() => {
+                        axios.post(chambre1_loff).then(() => {
+                          init_lum();
+                        });
+                      }}
+                    />
+                    <input
+                      type="submit"
+                      class="btn btn-outline-secondary btn-sm position"
+                      value="Désactiver"
+                      onClick={() => {
+                        axios.post(chambre1_loff).then(() => {
+                          init_lum();
+                        });
+                      }}
+                    />
                   </div>
                 </div>
               </div>
@@ -417,7 +492,7 @@ function App() {
 
             <div
               class="col-md-auto border border-dark"
-              style={{ paddingLeft: "0", paddingRight: "0", width: "360px" }}
+              style={{ paddingLeft: "0", paddingRight: "0", width: "400px" }}
             >
               <LightRoom
                 roomId="4"
@@ -448,6 +523,9 @@ function App() {
                         });
                       }}
                     ></input>
+                    <br />
+                    <br />
+                    <p> Mode automatique </p>
                   </div>
                   <div class="col" style={{ textAlign: "center" }}>
                     <input
@@ -470,6 +548,28 @@ function App() {
                         });
                       }}
                     ></input>
+                    <br />
+                    <br />
+                    <input
+                      type="submit"
+                      class="btn btn-outline-secondary btn-sm position"
+                      value="Activer"
+                      onClick={() => {
+                        axios.post(chambre1_loff).then(() => {
+                          init_lum();
+                        });
+                      }}
+                    />
+                    <input
+                      type="submit"
+                      class="btn btn-outline-secondary btn-sm position"
+                      value="Désactiver"
+                      onClick={() => {
+                        axios.post(chambre1_loff).then(() => {
+                          init_lum();
+                        });
+                      }}
+                    />
                   </div>
                 </div>
               </div>
