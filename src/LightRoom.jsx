@@ -16,7 +16,7 @@ function LightRoom(props) {
 
                 <div class="col" style={{'textAlign':'center'}}>
                     <p> Lumière : {props.etatlum}</p>
-                    <img class="position" src='https://media.istockphoto.com/vectors/light-bulb-with-rays-lighting-electric-lamp-creative-idea-solution-vector-id1149246206?k=20&m=1149246206&s=612x612&w=0&h=yz2GuTngOnZAHYq4wDsAwq0mp20OWlIUSSdmyIU3sRM=' width='150' height='120'></img>
+                    <img class="position" src='https://media.istockphoto.com/vectors/light-bulb-with-rays-lighting-electric-lamp-creative-idea-solution-vector-id1149246206?k=20&m=1149246206&s=612x612&w=0&h=yz2GuTngOnZAHYq4wDsAwq0mp20OWlIUSSdmyIU3sRM=' width='150' height='100'></img>
                 </div>
 
 
