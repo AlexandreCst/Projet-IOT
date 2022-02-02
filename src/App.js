@@ -135,7 +135,7 @@ function App() {
           <div class="row justify-content-center">
             <div
               class="col-md-auto border border-dark"
-              style={{ right: "100px", width: "200px" }}
+              style={{ right: "100px", width: "200px", left: "3px" }}
             >
               <div class="text-center">
                 <p>Central lumières</p>
@@ -163,7 +163,7 @@ function App() {
 
             <div
               class="col-md-auto border border-dark"
-              style={{ right: "100px", width: "200px" }}
+              style={{ right: "100px", width: "200px", left: "3px" }}
             >
               <div class="text-center">
                 <p>Central volets </p>
@@ -194,7 +194,7 @@ function App() {
 
             <div
               class="col-md-auto offset-md-4 border border-dark"
-              style={{ left: "100px" }}
+              style={{ right: "3px" }}
             >
               <div class="text-center" style={{ alignContent: "center" }}>
                 <p>Mode automatique</p>
@@ -474,6 +474,10 @@ function App() {
                 </div>
               </div>
             </div>
+          </div>
+
+          <div class="row-2">
+            <br></br>
           </div>
         </div>
       </body>
