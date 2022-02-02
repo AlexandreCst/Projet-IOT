@@ -70,6 +70,8 @@ function App() {
   var lumoff = "http://172.23.11.52:8080/maison/light/master/0";
 
   // Gestion centralisée des volets
+  var volon = "http://172.23.11.52:8080/maison/rideaux/master/1";
+  var voloff = "http://172.23.11.52:8080/maison/rideaux/master/0";
 
   return (
     <html>
@@ -89,14 +91,34 @@ function App() {
 
       <body>
         <div className="App-header" style={{ paddingBlockEnd: "15px" }}>
-          <p style={{ fontVariant: "small-caps", fontSize: "20pt" }}>
-            Ma Maison Connectée
-          </p>
-          <img
-            src="https://us.123rf.com/450wm/sissoupitch/sissoupitch1710/sissoupitch171000043/88071185-ic%C3%B4ne-de-la-domotique-ou-de-la-maison-connect%C3%A9e.jpg?ver=6"
-            width="70px"
-          />
-          <br></br>
+          <div class="row justify-content-center">
+            <div class="col">
+              <img
+                src="https://cdn-icons.flaticon.com/png/512/1384/premium/1384521.png?token=exp=1643797297~hmac=27bd29f4cf8c6444c787e9c6c1bf8d99"
+                width="70px"
+              />
+            </div>
+
+            <div class="col">
+              <p
+                style={{
+                  fontVariant: "small-caps",
+                  fontSize: "20pt",
+                  alignContent: "center",
+                }}
+              >
+                Ma Maison Connectée
+              </p>
+            </div>
+
+            <div class="col">
+              <img
+                src="https://cdn-icons.flaticon.com/png/512/1384/premium/1384521.png?token=exp=1643797297~hmac=27bd29f4cf8c6444c787e9c6c1bf8d99"
+                width="70px"
+              />
+              <br></br>
+            </div>
+          </div>
         </div>
 
         <div class="container">
@@ -150,13 +172,13 @@ function App() {
                   type="submit"
                   class="btn btn-outline-secondary btn-sm position"
                   value="Ouvrir"
-                  onClick={() => axios.post(lumon)}
+                  onClick={() => axios.post(volon)}
                 ></input>
                 <input
                   type="submit"
                   class="btn btn-outline-secondary btn-sm position"
                   value="Fermer"
-                  onClick={() => axios.post(lumoff)}
+                  onClick={() => axios.post(voloff)}
                 ></input>
               </div>
             </div>
