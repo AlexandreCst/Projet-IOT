@@ -66,6 +66,12 @@ function App() {
   var mode_automatique = "http://172.23.11.52:5000/maison/auto/1"; // activation du mode auto
   var mode_manuel = "http://172.23.11.52:5000/maison/auto/0"; // désactivation du mode auto
 
+  // Gestion centralisée des lumières
+  var lumon = "http://172.23.11.52:5000/maison/light/master/1";
+  var lumoff = "http://172.23.11.52:5000/maison/light/master/1";
+
+  // Gestion centralisée des volets
+
   return (
     <html>
       <head>
@@ -88,7 +94,7 @@ function App() {
             Ma Maison Connectée
           </p>
           <img
-            src="https://cdn-icons.flaticon.com/png/512/2668/premium/2668334.png?token=exp=1643791192~hmac=e890026dfbb893d331ec47a141a160ae"
+            src="https://us.123rf.com/450wm/sissoupitch/sissoupitch1710/sissoupitch171000043/88071185-ic%C3%B4ne-de-la-domotique-ou-de-la-maison-connect%C3%A9e.jpg?ver=6"
             width="70px"
           />
           <br></br>
@@ -102,10 +108,10 @@ function App() {
           <div class="row justify-content-center">
             <div
               class="col-md-auto border border-dark"
-              style={{ right: "100px", width: "250px" }}
+              style={{ right: "100px", width: "200px" }}
             >
               <div class="text-center">
-                <p>Gestion généralisée lumières</p>
+                <p>Central lumières</p>
                 <img
                   class="position"
                   src="https://media.istockphoto.com/vectors/light-bulb-with-rays-lighting-electric-lamp-creative-idea-solution-vector-id1149246206?k=20&m=1149246206&s=612x612&w=0&h=yz2GuTngOnZAHYq4wDsAwq0mp20OWlIUSSdmyIU3sRM="
@@ -130,10 +136,10 @@ function App() {
 
             <div
               class="col-md-auto border border-dark"
-              style={{ right: "100px", width: "250px" }}
+              style={{ right: "100px", width: "200px" }}
             >
               <div class="text-center">
-                <p>Gestion généralisée volets </p>
+                <p>Central volets </p>
                 <img
                   class="position"
                   src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQf2RlM1U8Neiv0EJ3JBUWg046KssJYF-Qt9Q&usqp=CAU"
@@ -144,14 +150,14 @@ function App() {
                 <input
                   type="submit"
                   class="btn btn-outline-secondary btn-sm position"
-                  value="Ouvrir"
-                  onClick={() => axios.post(mode_automatique)}
+                  value="Allumer"
+                  onClick={() => axios.post(lumon)}
                 ></input>
                 <input
                   type="submit"
                   class="btn btn-outline-secondary btn-sm position"
-                  value="Fermer"
-                  onClick={() => axios.post(mode_manuel)}
+                  value="Eteindre"
+                  onClick={() => axios.post(lumoff)}
                 ></input>
               </div>
             </div>
@@ -165,6 +171,12 @@ function App() {
             >
               <div class="text-center" style={{ alignContent: "center" }}>
                 <p>Mode automatique</p>
+                <img
+                  src="https://pic.onlinewebfonts.com/svg/img_299766.png"
+                  width="60px"
+                />
+                <br />
+                <br />
                 <input
                   type="submit"
                   class="btn btn-outline-secondary btn-sm position"
@@ -189,8 +201,8 @@ function App() {
             {/* Chambre 1 */}
 
             <div
-              class="col-4 border border-dark"
-              style={{ paddingLeft: "0", paddingRight: "0" }}
+              class="col-md-auto border border-dark"
+              style={{ paddingLeft: "0", paddingRight: "0", width: "360px" }}
             >
               <LightRoom
                 roomId="1"
@@ -239,8 +251,8 @@ function App() {
             {/* Chambre 2 */}
 
             <div
-              class="col-4 border border-dark"
-              style={{ paddingLeft: "0", paddingRight: "0" }}
+              class="col-md-auto  border border-dark"
+              style={{ paddingLeft: "0", paddingRight: "0", width: "360px" }}
             >
               <LightRoom
                 roomId="2"
@@ -286,8 +298,8 @@ function App() {
             {/* Cuisine */}
 
             <div
-              class="col-4 border border-dark"
-              style={{ paddingLeft: "0", paddingRight: "0" }}
+              class="col-md-auto border border-dark"
+              style={{ paddingLeft: "0", paddingRight: "0", width: "360px" }}
             >
               <LightRoom
                 roomId="3"
@@ -331,8 +343,8 @@ function App() {
             {/* Salon */}
 
             <div
-              class="col-4 border border-dark"
-              style={{ paddingLeft: "0", paddingRight: "0" }}
+              class="col-md-auto border border-dark"
+              style={{ paddingLeft: "0", paddingRight: "0", width: "360px" }}
             >
               <LightRoom
                 roomId="4"
