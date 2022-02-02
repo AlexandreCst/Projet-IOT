@@ -6,8 +6,6 @@ function LightRoom(props) {
     
     // Variable pour l'état des volets dans la pièce
 
-    var etatvolet = 'on';
-
     return(
 
         <div class='container'>

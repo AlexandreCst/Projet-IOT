@@ -78,7 +78,7 @@ crossorigin="anonymous"/>
 
         <div className="App-header" style={{'paddingBlockEnd':'15px'}}> 
           <p style={{'fontVariant':'small-caps','fontSize':'20pt'}}>Ma Maison Connectée</p>
-          <img src='https://cdn-icons.flaticon.com/png/512/2668/premium/2668334.png?token=exp=1643620929~hmac=6579c27a12d50911c5c414ca8a9f8f5a' width='60px'/>
+          <img src='https://cdn-icons.flaticon.com/png/512/2668/premium/2668334.png' width='70px'/>
           <br></br>
         </div>
 
@@ -88,13 +88,36 @@ crossorigin="anonymous"/>
             <br></br>
           </div>
 
-          <div class='col-md-2 offset-md-11 border border-dark' style={{'right':'15px'}}>
-            <div class='text-center'> 
-              <p>Mode automatique</p>
-              <input type='submit' class="btn btn-outline-secondary btn-sm position" value='Activer' onClick={() => axios.post(mode_automatique)}></input> 
-              <input type='submit' class="btn btn-outline-secondary btn-sm position" value='Désactiver' onClick={() => axios.post(mode_manuel)}></input>
-            </div> 
-          </div>
+          {/* <div class='row'>
+
+            <div class='col-md-auto border border-dark' style={{'right':'15px'}}>
+              <div class='text-center'> 
+                <p>Gestion généralisée lumières</p>
+                <input type='submit' class="btn btn-outline-secondary btn-sm position" value='Activer' onClick={() => axios.post(mode_automatique)}></input> 
+                <input type='submit' class="btn btn-outline-secondary btn-sm position" value='Désactiver' onClick={() => axios.post(mode_manuel)}></input>
+              </div> 
+            </div>
+
+            <div class='col-md-auto border border-dark' style={{'right':'15px'}}>
+              <div class='text-center'> 
+                <p>Gestion généralisée volets </p>
+                <input type='submit' class="btn btn-outline-secondary btn-sm position" value='Activer' onClick={() => axios.post(mode_automatique)}></input> 
+                <input type='submit' class="btn btn-outline-secondary btn-sm position" value='Désactiver' onClick={() => axios.post(mode_manuel)}></input>
+              </div> 
+            </div>
+
+            <div class='col'/>
+            <div class='col'/>
+
+            <div class='col-md-auto border border-dark' style={{'right':'15px'}}>
+              <div class='text-center'> 
+                <p>Mode automatique</p>
+                <input type='submit' class="btn btn-outline-secondary btn-sm position" value='Activer' onClick={() => axios.post(mode_automatique)}></input> 
+                <input type='submit' class="btn btn-outline-secondary btn-sm position" value='Désactiver' onClick={() => axios.post(mode_manuel)}></input>
+              </div> 
+            </div>
+
+          </div> */}
 
           <div class="row-2">
             <br></br>
@@ -123,7 +146,7 @@ crossorigin="anonymous"/>
             {/* Chambre 2 */}
 
             <div class="col-4 border border-dark" style={{'paddingLeft':"0", 'paddingRight':"0"}}>
-              <LightRoom roomId='2' name="Chambre 2" etatlum={etat['Chambre2']}></LightRoom>
+              <LightRoom roomId='2' name="Chambre 2" etatlum={etatlum['Chambre2']}></LightRoom>
               <div class='container'>
                 <div class="row justify-content-center">
                   <div class="col" style={{'textAlign':'center'}}>
@@ -137,7 +160,6 @@ crossorigin="anonymous"/>
                 </div>
               </div>
             </div>
-
           </div>
 
           <div class="row justify-content-center">
@@ -145,7 +167,7 @@ crossorigin="anonymous"/>
             {/* Cuisine */}
 
             <div class="col-4 border border-dark" style={{'paddingLeft':"0", 'paddingRight':"0"}}>
-              <LightRoom roomId='3' name="Cuisine" etatlum={etat['Cuisine']}></LightRoom>
+              <LightRoom roomId='3' name="Cuisine" etatlum={etatlum['Cuisine']}></LightRoom>
               <div class='container'>
                 <div class="row justify-content-center">
                   <div class="col" style={{'textAlign':'center'}}>
@@ -163,7 +185,7 @@ crossorigin="anonymous"/>
             {/* Salon */}
 
             <div class="col-4 border border-dark" style={{'paddingLeft':"0", 'paddingRight':"0"}}>
-              <LightRoom roomId='4' name="Salon" etatlum={etat['Salon']}></LightRoom>
+              <LightRoom roomId='4' name="Salon" etatlum={etatlum['Salon']}></LightRoom>
               <div class='container'>
                 <div class="row justify-content-center">
                     <div class="col" style={{'textAlign':'center'}}>
