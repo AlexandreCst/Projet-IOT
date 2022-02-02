@@ -10,17 +10,23 @@ function App() {
 
       // useEffect nous permettra de déclencher le fetch; useState permettra de stocker le retour de l'API dans le state
 
-      const [etat, setEtat] = useState ([]) ;
+      const [etatlum, setEtatLum] = useState ([]) ;
+      const [etatvol, setEtatVol] = useState ([]) ;
 
       useEffect(() => {
           fetch("http://172.20.8.176:5000/maison/light").then(response =>
             response.json().then(data => {
-              setEtat(data);
-              console.log('debut');
-              console.log(etat);
+              setEtatLum(data);
+              console.log(etatlum);
             })
           );
-      },[]); 
+          fetch("http://172.20.8.176:5000/maison/rideaux").then(response =>
+            response.json().then(data => {
+              setEtatVol(data);
+              console.log(etatlum);
+            })
+          );
+      },[]);
 
     
     // // On récupère l'état des volets
@@ -97,7 +103,7 @@ crossorigin="anonymous"/>
             {/* Chambre 1 */}
 
             <div class="col-4 border border-dark" style={{'paddingLeft':"0", 'paddingRight':"0"}}>
-                <LightRoom roomId='1' name="Chambre 1" etatlum={etat['Chambre1']} urlOn='chambre1_on' urlOff='chambre1_off'></LightRoom>
+                <LightRoom roomId='1' name="Chambre 1" etatlum={etatlum['Chambre1']} etatvol={etatvol['Chambre1']} ></LightRoom>
                 <div class="row">
                 <div class="col" style={{'textAlign':'center'}}>
                   <input type='submit' class="btn btn-outline-secondary btn-sm position" value='Allumer' onClick={() => axios.post(chambre1_lon)}></input>
@@ -113,7 +119,7 @@ crossorigin="anonymous"/>
             {/* Chambre 2 */}
 
             <div class="col-4 border border-dark" style={{'paddingLeft':"0", 'paddingRight':"0"}}>
-              <LightRoom roomId='2' name="Chambre 2" etatlum={etat['Chambre2']}></LightRoom>
+              <LightRoom roomId='2' name="Chambre 2" etatlum={etatlum['Chambre1']}></LightRoom>
               
               <div class="row">
                 <div class="col" style={{'textAlign':'center'}}>
@@ -134,7 +140,7 @@ crossorigin="anonymous"/>
             {/* Cuisine */}
 
             <div class="col-4 border border-dark" style={{'paddingLeft':"0", 'paddingRight':"0"}}>
-              <LightRoom roomId='3' name="Cuisine" etatlum={etat['Cuisine']}></LightRoom>
+              <LightRoom roomId='3' name="Cuisine" etatlum={etatlum['Cuisine']}></LightRoom>
               <div class="row">
                   <div class="col" style={{'textAlign':'center'}}>
                     <input type='submit' class="btn btn-outline-secondary btn-sm position" value='Allumer' onClick={() => axios.post(cuisine_lon)}></input>
@@ -150,7 +156,7 @@ crossorigin="anonymous"/>
             {/* Salon */}
 
             <div class="col-4 border border-dark" style={{'paddingLeft':"0", 'paddingRight':"0"}}>
-              <LightRoom roomId='4' name="Salon" etatlum={etat['Salon']}></LightRoom>
+              <LightRoom roomId='4' name="Salon" etatlum={etatlum['Salon']}></LightRoom>
               <div class="row">
                   <div class="col" style={{'textAlign':'center'}}>
                     <input type='submit' class="btn btn-outline-secondary btn-sm position" value='Allumer' onClick={() => axios.post(salon_lon)}></input>

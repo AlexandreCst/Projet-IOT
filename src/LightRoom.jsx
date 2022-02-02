@@ -23,7 +23,7 @@ function LightRoom(props) {
 
 
                 <div class="col" style={{'textAlign':'center'}}>               
-                    <p class="text-center"> Volets : etatvolet </p>
+                    <p class="text-center"> Volets : {props.etatvol} </p>
                     <img class="position" src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQf2RlM1U8Neiv0EJ3JBUWg046KssJYF-Qt9Q&usqp=CAU' width='120' height='120'></img>
                 </div>
 
