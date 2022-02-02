@@ -1,4 +1,4 @@
-import logo from "./logo.svg";
+import smart_home from "./smart-home.png";
 import "./App.css";
 import LightRoom from "./LightRoom";
 import axios from "axios";
@@ -70,8 +70,8 @@ function App() {
   var lumoff = "http://172.23.11.52:5000/maison/light/master/0";
 
   // Gestion centralisée des volets
-  var volon = "http://172.23.11.52:8080/maison/rideaux/master/1";
-  var voloff = "http://172.23.11.52:8080/maison/rideaux/master/0";
+  var volon = "http://172.23.11.52:5000/maison/rideaux/master/1";
+  var voloff = "http://172.23.11.52:5000/maison/rideaux/master/0";
 
   return (
     <html>
@@ -92,29 +92,35 @@ function App() {
       <body>
         <div className="App-header" style={{ paddingBlockEnd: "15px" }}>
           <div class="row justify-content-center">
-            <div class="col">
+            <div class="col-md-auto">
               <img
-                src="https://cdn-icons.flaticon.com/png/512/1384/premium/1384521.png?token=exp=1643797297~hmac=27bd29f4cf8c6444c787e9c6c1bf8d99"
+                src={smart_home}
+                alt="smart_home"
                 width="70px"
+                style={{ paddingTop: "15px" }}
               />
+              <br></br>
             </div>
 
-            <div class="col">
+            <div class="col-md-auto">
               <p
                 style={{
                   fontVariant: "small-caps",
                   fontSize: "20pt",
                   alignContent: "center",
+                  paddingTop: "30px",
                 }}
               >
                 Ma Maison Connectée
               </p>
             </div>
 
-            <div class="col">
+            <div class="col-md-auto">
               <img
-                src="https://cdn-icons.flaticon.com/png/512/1384/premium/1384521.png?token=exp=1643797297~hmac=27bd29f4cf8c6444c787e9c6c1bf8d99"
+                src={smart_home}
+                alt="smart_home"
                 width="70px"
+                style={{ paddingTop: "15px" }}
               />
               <br></br>
             </div>
