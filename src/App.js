@@ -91,28 +91,28 @@ crossorigin="anonymous"/>
             <br></br>
           </div>
 
-          {/* <div class='row'>
+          <div class='row'>
 
-            <div class='col-md-auto border border-dark' style={{'right':'15px'}}>
+            <div class='col-md-auto border border-dark' style={{'right':'100px', 'width':'250px'}}>
               <div class='text-center'> 
                 <p>Gestion généralisée lumières</p>
-                <input type='submit' class="btn btn-outline-secondary btn-sm position" value='Activer' onClick={() => axios.post(mode_automatique)}></input> 
-                <input type='submit' class="btn btn-outline-secondary btn-sm position" value='Désactiver' onClick={() => axios.post(mode_manuel)}></input>
+                <input type='submit' class="btn btn-outline-secondary btn-sm position" value='Ouvrir' onClick={() => axios.post(mode_automatique)}></input> 
+                <input type='submit' class="btn btn-outline-secondary btn-sm position" value='Fermer' onClick={() => axios.post(mode_manuel)}></input>
               </div> 
             </div>
 
-            <div class='col-md-auto border border-dark' style={{'right':'15px'}}>
+            <div class='col-md-auto border border-dark' style={{'right':'100px','width':'250px'}}>
               <div class='text-center'> 
                 <p>Gestion généralisée volets </p>
-                <input type='submit' class="btn btn-outline-secondary btn-sm position" value='Activer' onClick={() => axios.post(mode_automatique)}></input> 
-                <input type='submit' class="btn btn-outline-secondary btn-sm position" value='Désactiver' onClick={() => axios.post(mode_manuel)}></input>
+                <input type='submit' class="btn btn-outline-secondary btn-sm position" value='Ouvrir' onClick={() => axios.post(mode_automatique)}></input> 
+                <input type='submit' class="btn btn-outline-secondary btn-sm position" value='Fermer' onClick={() => axios.post(mode_manuel)}></input>
               </div> 
             </div>
 
             <div class='col'/>
             <div class='col'/>
 
-            <div class='col-md-auto border border-dark' style={{'right':'15px'}}>
+            <div class='col-md-auto offset-md-4 border border-dark' style={{'left':'100px'}}>
               <div class='text-center'> 
                 <p>Mode automatique</p>
                 <input type='submit' class="btn btn-outline-secondary btn-sm position" value='Activer' onClick={() => axios.post(mode_automatique)}></input> 
@@ -120,7 +120,7 @@ crossorigin="anonymous"/>
               </div> 
             </div>
 
-          </div> */}
+          </div>
 
           <div class="row-2">
             <br></br>
@@ -139,7 +139,7 @@ crossorigin="anonymous"/>
                     <input type='submit' class="btn btn-outline-secondary btn-sm position" value='Eteindre' onClick={() => axios.post(chambre1_loff)}></input>
                   </div>
                   <div class="col" style={{'textAlign':'center'}}>
-                    <input type='submit' class="btn btn-outline-secondary btn-sm position" value='Ouvert' onClick={() => axios.post(chambre1_von)}></input>
+                    <input type='submit' class="btn btn-outline-secondary btn-sm position" value='Ouvrir' onClick={() => axios.post(chambre1_von)}></input>
                     <input type='submit' class="btn btn-outline-secondary btn-sm position" value='Fermer' onClick={() => axios.post(chambre1_voff)}></input>
                   </div>
                 </div>
@@ -157,8 +157,8 @@ crossorigin="anonymous"/>
                     <input type='submit' class="btn btn-outline-secondary btn-sm position" value='Eteindre' onClick={() => axios.post(chambre2_loff)}></input>
                   </div>
                   <div class="col" style={{'textAlign':'center'}}>
-                    <input type='submit' class="btn btn-outline-secondary btn-sm position" value='Allumer' onClick={() => axios.post(chambre2_von)}></input>
-                    <input type='submit' class="btn btn-outline-secondary btn-sm position" value='Eteindre' onClick={() => axios.post(chambre2_von)}></input>
+                    <input type='submit' class="btn btn-outline-secondary btn-sm position" value='Ouvrir' onClick={() => axios.post(chambre2_von)}></input>
+                    <input type='submit' class="btn btn-outline-secondary btn-sm position" value='Fermer' onClick={() => axios.post(chambre2_von)}></input>
                   </div>
                 </div>
               </div>
@@ -178,8 +178,8 @@ crossorigin="anonymous"/>
                     <input type='submit' class="btn btn-outline-secondary btn-sm position" value='Eteindre' onClick={() => axios.post(cuisine_voff)}></input>
                   </div>
                   <div class="col" style={{'textAlign':'center'}}>
-                    <input type='submit' class="btn btn-outline-secondary btn-sm position" value='Allumer' onClick={() => axios.post(cuisine_von)}></input>
-                    <input type='submit' class="btn btn-outline-secondary btn-sm position" value='Eteindre' onClick={() => axios.post(cuisine_voff)}></input>
+                    <input type='submit' class="btn btn-outline-secondary btn-sm position" value='Ouvrir' onClick={() => axios.post(cuisine_von)}></input>
+                    <input type='submit' class="btn btn-outline-secondary btn-sm position" value='Fermer' onClick={() => axios.post(cuisine_voff)}></input>
                   </div>
                 </div>
               </div>
@@ -196,8 +196,8 @@ crossorigin="anonymous"/>
                       <input type='submit' class="btn btn-outline-secondary btn-sm position" value='Eteindre' onClick={() => axios.post(salon_loff)}></input>
                     </div>
                     <div class="col" style={{'textAlign':'center'}}>
-                      <input type='submit' class="btn btn-outline-secondary btn-sm position" value='Allumer' onClick={() => axios.post(salon_von)}></input>
-                      <input type='submit' class="btn btn-outline-secondary btn-sm position" value='Eteindre' onClick={() => axios.post(salon_voff)}></input>
+                      <input type='submit' class="btn btn-outline-secondary btn-sm position" value='Ouvrir' onClick={() => axios.post(salon_von)}></input>
+                      <input type='submit' class="btn btn-outline-secondary btn-sm position" value='Fermer' onClick={() => axios.post(salon_voff)}></input>
                     </div>
                 </div>
               </div>
