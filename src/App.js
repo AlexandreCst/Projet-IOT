@@ -70,8 +70,8 @@ function App() {
   var lumoff = "http://172.23.11.52:5000/maison/light/master/0";
 
   // Gestion centralisée des volets
-  var volon = "http://172.23.11.52:8080/maison/rideaux/master/1";
-  var voloff = "http://172.23.11.52:8080/maison/rideaux/master/0";
+  var volon = "http://172.23.11.52:5000/maison/rideaux/master/1";
+  var voloff = "http://172.23.11.52:5000/maison/rideaux/master/0";
 
   return (
     <html>
