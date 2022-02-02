@@ -14,53 +14,56 @@ function App() {
       const [etatvol, setEtatVol] = useState ([]) ;
 
       useEffect(() => {
-          fetch("http://172.20.8.176:5000/maison/light").then(response =>
+          fetch("http://172.23.11.52:5000/maison/light").then(response =>
             response.json().then(data => {
               setEtatLum(data);
               console.log(etatlum);
             })
           );
-          fetch("http://172.20.8.176:5000/maison/rideaux").then(response =>
-            response.json().then(data => {
-              setEtatVol(data);
-              console.log(etatlum);
-            })
-          );
-      },[]);
+        },[]);
 
     
     // // On récupère l'état des volets
+
+      useEffect(() => {
+        fetch("http://172.23.11.52:5000/maison/rideaux").then(response =>
+          response.json().then(data => {
+            setEtatVol(data);
+            console.log(etatvol);
+            })
+          );
+        },[]);
 
 
     //On récupère les URL pour la gestion des lumières
 
     //var ip = "http://172.20.8.176:8080/maison/"
-    var chambre1_lon = "http://172.20.8.176:5000/maison/light/3/1"; // Led Chambre 1
-    var chambre2_lon = "http://172.20.8.176:5000/maison/light/5/1"; // Led Chambre 2
-    var cuisine_lon = "http://172.20.8.176:5000/maison/light/7/1"; // Led Cuisine
-    var salon_lon = "http://172.20.8.176:5000/maison/light/11/1"; //Led Salon
+    var chambre1_lon = "http://172.23.11.52:5000/maison/light/3/1"; // Led Chambre 1
+    var chambre2_lon = "http://172.23.11.52:5000/maison/light/5/1"; // Led Chambre 2
+    var cuisine_lon = "http://172.23.11.52:5000/maison/light/7/1"; // Led Cuisine
+    var salon_lon = "http://172.23.11.52:5000/maison/light/11/1"; //Led Salon
 
-    var chambre1_loff = "http://172.20.8.176:5000/maison/light/3/0"; // Led Chambre 1
-    var chambre2_loff = "http://172.20.8.176:5000/maison/light/5/0"; // Led Chambre 2
-    var cuisine_loff = "http://172.20.8.176:5000/maison/light/7/0"; // Led Cuisine
-    var salon_loff = "http://172.20.8.176:5000/maison/light/11/0"; // Led Salon
+    var chambre1_loff = "http://172.23.11.52:5000/maison/light/3/0"; // Led Chambre 1
+    var chambre2_loff = "http://172.23.11.52:5000/maison/light/5/0"; // Led Chambre 2
+    var cuisine_loff = "http://172.23.11.52:5000/maison/light/7/0"; // Led Cuisine
+    var salon_loff = "http://172.23.11.52:5000/maison/light/11/0"; // Led Salon
 
     //On récupère les URL pour la gestion des lumières
 
-    var chambre1_von = "http://172.20.8.176:5000/maison/rideaux/1/1"; // Volet Chambre 1
-    var chambre2_von = "http://172.20.8.176:5000/maison/rideaux/2/1"; // Volet Chambre 2
-    var cuisine_von = "http://172.20.8.176:5000/maison/rideaux/3/1"; // Volet Cuisine
-    var salon_von = "http://172.20.8.176:5000/maison/rideaux/4/1"; // Volet Salon
+    var chambre1_von = "http://172.23.11.52:5000/maison/rideaux/1/1"; // Volet Chambre 1
+    var chambre2_von = "http://172.23.11.52:5000/maison/rideaux/2/1"; // Volet Chambre 2
+    var cuisine_von = "http://172.23.11.52:5000/maison/rideaux/3/1"; // Volet Cuisine
+    var salon_von = "http://172.23.11.52:5000/maison/rideaux/4/1"; // Volet Salon
 
-    var chambre1_voff = "http://172.20.8.176:5000/maison/rideaux/1/0"; // Volet Chambre 1
-    var chambre2_voff = "http://172.20.8.176:5000/maison/rideaux/2/0"; // Volet Chambre 2
-    var cuisine_voff = "http://172.20.8.176:5000/maison/rideaux/3/0"; // Volet Cuisine
-    var salon_voff = "http://172.20.8.176:5000/maison/rideaux/4/0"; // Volet Salon
+    var chambre1_voff = "http://172.23.11.52:5000/maison/rideaux/1/0"; // Volet Chambre 1
+    var chambre2_voff = "http://172.23.11.52:5000/maison/rideaux/2/0"; // Volet Chambre 2
+    var cuisine_voff = "http://172.23.11.52:5000/maison/rideaux/3/0"; // Volet Cuisine
+    var salon_voff = "http://172.23.11.52:5000/maison/rideaux/4/0"; // Volet Salon
  
     //Gestion du mode automatique
 
-    var mode_automatique = "http://172.20.8.176:5000/maison/auto/1"; // activation du mode auto
-    var mode_manuel = "http://172.20.8.176:5000/maison/auto/0"; // désactivation du mode auto
+    var mode_automatique = "http://172.23.11.52:5000/maison/auto/1"; // activation du mode auto
+    var mode_manuel = "http://172.23.11.52:5000/maison/auto/0"; // désactivation du mode auto
 
   return (
 
@@ -113,8 +116,8 @@ crossorigin="anonymous"/>
                     <input type='submit' class="btn btn-outline-secondary btn-sm position" value='Eteindre' onClick={() => axios.post(chambre1_loff)}></input>
                   </div>
                   <div class="col" style={{'textAlign':'center'}}>
-                    <input type='submit' class="btn btn-outline-secondary btn-sm position" value='Allumer' onClick={() => axios.post(chambre1_von)}></input>
-                    <input type='submit' class="btn btn-outline-secondary btn-sm position" value='Eteindre' onClick={() => axios.post(chambre1_voff)}></input>
+                    <input type='submit' class="btn btn-outline-secondary btn-sm position" value='Ouvert' onClick={() => axios.post(chambre1_von)}></input>
+                    <input type='submit' class="btn btn-outline-secondary btn-sm position" value='Fermer' onClick={() => axios.post(chambre1_voff)}></input>
                   </div>
                 </div>
               </div>
@@ -123,7 +126,7 @@ crossorigin="anonymous"/>
             {/* Chambre 2 */}
 
             <div class="col-4 border border-dark" style={{'paddingLeft':"0", 'paddingRight':"0"}}>
-              <LightRoom roomId='2' name="Chambre 2" etatlum={etat['Chambre2']}></LightRoom>
+              <LightRoom roomId='2' name="Chambre 2" etatlum={etatlum['Chambre2']}></LightRoom>
               <div class='container'>
                 <div class="row justify-content-center">
                   <div class="col" style={{'textAlign':'center'}}>
@@ -145,7 +148,7 @@ crossorigin="anonymous"/>
             {/* Cuisine */}
 
             <div class="col-4 border border-dark" style={{'paddingLeft':"0", 'paddingRight':"0"}}>
-              <LightRoom roomId='3' name="Cuisine" etatlum={etat['Cuisine']}></LightRoom>
+              <LightRoom roomId='3' name="Cuisine" etatlum={etatlum['Cuisine']}></LightRoom>
               <div class='container'>
                 <div class="row justify-content-center">
                   <div class="col" style={{'textAlign':'center'}}>
@@ -163,7 +166,7 @@ crossorigin="anonymous"/>
             {/* Salon */}
 
             <div class="col-4 border border-dark" style={{'paddingLeft':"0", 'paddingRight':"0"}}>
-              <LightRoom roomId='4' name="Salon" etatlum={etat['Salon']}></LightRoom>
+              <LightRoom roomId='4' name="Salon" etatlum={etatlum['Salon']}></LightRoom>
               <div class='container'>
                 <div class="row justify-content-center">
                     <div class="col" style={{'textAlign':'center'}}>
