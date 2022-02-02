@@ -12,7 +12,7 @@ function App() {
   const [etatlum, setEtatLum] = useState({});
   const [etatvol, setEtatVol] = useState({});
 
-  function init() {
+  function init_lum() {
     fetch("http://172.23.11.52:5000/maison/light").then((response) =>
       response.json().then((data) => {
         setEtatLum(data);
@@ -21,20 +21,20 @@ function App() {
     );
   }
 
-  useEffect(() => {
-    init();
-  }, []);
-
-  // // On récupère l'état des volets
-
-  useEffect(() => {
+  function init_vol() {
     fetch("http://172.23.11.52:5000/maison/rideaux").then((response) =>
       response.json().then((data) => {
         setEtatVol(data);
         console.log(etatvol);
       })
     );
+  }
+
+  useEffect(() => {
+    init_lum();
+    init_vol();
   }, []);
+
 
   //On récupère les URL pour la gestion des lumières
 
@@ -207,7 +207,7 @@ function App() {
                       value="Allumer"
                       onClick={() => {
                         axios.post(chambre1_lon).then(() => {
-                          init();
+                          init_lum();
                         });
                       }}
                     ></input>
@@ -215,7 +215,11 @@ function App() {
                       type="submit"
                       class="btn btn-outline-secondary btn-sm position"
                       value="Eteindre"
-                      onClick={() => axios.post(chambre1_loff)}
+                      onClick={() => {
+                        axios.post(chambre1_loff).then(() => {
+                          init_lum();
+                        });
+                      }}
                     ></input>
                   </div>
                   <div class="col" style={{ textAlign: "center" }}>
@@ -223,13 +227,21 @@ function App() {
                       type="submit"
                       class="btn btn-outline-secondary btn-sm position"
                       value="Ouvrir"
-                      onClick={() => axios.post(chambre1_von)}
+                      onClick={() => {
+                        axios.post(chambre1_von).then(() => {
+                          init_vol();
+                        });
+                      }}
                     ></input>
                     <input
                       type="submit"
                       class="btn btn-outline-secondary btn-sm position"
                       value="Fermer"
-                      onClick={() => axios.post(chambre1_voff)}
+                      onClick={() => {
+                        axios.post(chambre1_voff).then(() => {
+                          init_vol();
+                        });
+                      }}
                     ></input>
                   </div>
                 </div>
@@ -254,13 +266,21 @@ function App() {
                       type="submit"
                       class="btn btn-outline-secondary btn-sm position"
                       value="Allumer"
-                      onClick={() => axios.post(chambre2_lon)}
+                      onClick={() => {
+                        axios.post(chambre2_lon).then(() => {
+                          init_lum();
+                        });
+                      }}
                     ></input>
                     <input
                       type="submit"
                       class="btn btn-outline-secondary btn-sm position"
                       value="Eteindre"
-                      onClick={() => axios.post(chambre2_loff)}
+                      onClick={() => {
+                        axios.post(chambre2_loff).then(() => {
+                          init_lum();
+                        });
+                      }}
                     ></input>
                   </div>
                   <div class="col" style={{ textAlign: "center" }}>
@@ -268,13 +288,21 @@ function App() {
                       type="submit"
                       class="btn btn-outline-secondary btn-sm position"
                       value="Ouvrir"
-                      onClick={() => axios.post(chambre2_von)}
+                      onClick={() => {
+                        axios.post(chambre2_von).then(() => {
+                          init_vol();
+                        });
+                      }}
                     ></input>
                     <input
                       type="submit"
                       class="btn btn-outline-secondary btn-sm position"
                       value="Fermer"
-                      onClick={() => axios.post(chambre2_von)}
+                      onClick={() => {
+                        axios.post(chambre2_voff).then(() => {
+                          init_vol();
+                        });
+                      }}
                     ></input>
                   </div>
                 </div>
@@ -301,13 +329,21 @@ function App() {
                       type="submit"
                       class="btn btn-outline-secondary btn-sm position"
                       value="Allumer"
-                      onClick={() => axios.post(cuisine_lon)}
+                      onClick={() => {
+                        axios.post(cuisine_lon).then(() => {
+                          init_lum();
+                        });
+                      }}
                     ></input>
                     <input
                       type="submit"
                       class="btn btn-outline-secondary btn-sm position"
                       value="Eteindre"
-                      onClick={() => axios.post(cuisine_voff)}
+                      onClick={() => {
+                        axios.post(cuisine_loff).then(() => {
+                          init_lum();
+                        });
+                      }}
                     ></input>
                   </div>
                   <div class="col" style={{ textAlign: "center" }}>
@@ -315,13 +351,21 @@ function App() {
                       type="submit"
                       class="btn btn-outline-secondary btn-sm position"
                       value="Ouvrir"
-                      onClick={() => axios.post(cuisine_von)}
+                      onClick={() => {
+                        axios.post(cuisine_von).then(() => {
+                          init_vol();
+                        });
+                      }}
                     ></input>
                     <input
                       type="submit"
                       class="btn btn-outline-secondary btn-sm position"
                       value="Fermer"
-                      onClick={() => axios.post(cuisine_voff)}
+                      onClick={() => {
+                        axios.post(cuisine_voff).then(() => {
+                          init_vol();
+                        });
+                      }}
                     ></input>
                   </div>
                 </div>
@@ -346,13 +390,21 @@ function App() {
                       type="submit"
                       class="btn btn-outline-secondary btn-sm position"
                       value="Allumer"
-                      onClick={() => axios.post(salon_lon)}
+                      onClick={() => {
+                        axios.post(salon_lon).then(() => {
+                          init_lum();
+                        });
+                      }}
                     ></input>
                     <input
                       type="submit"
                       class="btn btn-outline-secondary btn-sm position"
                       value="Eteindre"
-                      onClick={() => axios.post(salon_loff)}
+                      onClick={() => {
+                        axios.post(salon_loff).then(() => {
+                          init_lum();
+                        });
+                      }}
                     ></input>
                   </div>
                   <div class="col" style={{ textAlign: "center" }}>
@@ -360,13 +412,21 @@ function App() {
                       type="submit"
                       class="btn btn-outline-secondary btn-sm position"
                       value="Ouvrir"
-                      onClick={() => axios.post(salon_von)}
+                      onClick={() => {
+                        axios.post(salon_von).then(() => {
+                          init_vol();
+                        });
+                      }}
                     ></input>
                     <input
                       type="submit"
                       class="btn btn-outline-secondary btn-sm position"
                       value="Fermer"
-                      onClick={() => axios.post(salon_voff)}
+                      onClick={() => {
+                        axios.post(salon_voff).then(() => {
+                          init_vol();
+                        });
+                      }}
                     ></input>
                   </div>
                 </div>
