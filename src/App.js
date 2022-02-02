@@ -9,16 +9,20 @@ function App() {
 
   // useEffect nous permettra de déclencher le fetch; useState permettra de stocker le retour de l'API dans le state
 
-  const [etatlum, setEtatLum] = useState([]);
-  const [etatvol, setEtatVol] = useState([]);
+  const [etatlum, setEtatLum] = useState({});
+  const [etatvol, setEtatVol] = useState({});
 
-  useEffect(() => {
+  function init() {
     fetch("http://172.23.11.52:5000/maison/light").then((response) =>
       response.json().then((data) => {
         setEtatLum(data);
         console.log(etatlum);
       })
     );
+  }
+
+  useEffect(() => {
+    init();
   }, []);
 
   // // On récupère l'état des volets
@@ -201,7 +205,11 @@ function App() {
                       type="submit"
                       class="btn btn-outline-secondary btn-sm position"
                       value="Allumer"
-                      onClick={() => axios.post(chambre1_lon)}
+                      onClick={() => {
+                        axios.post(chambre1_lon).then(() => {
+                          init();
+                        });
+                      }}
                     ></input>
                     <input
                       type="submit"
