@@ -81,7 +81,7 @@ crossorigin="anonymous"/>
 
         <div className="App-header" style={{'paddingBlockEnd':'15px'}}> 
           <p style={{'fontVariant':'small-caps','fontSize':'20pt'}}>Ma Maison Connectée</p>
-          <img src='https://cdn-icons.flaticon.com/png/512/2668/premium/2668334.png' width='70px'/>
+          <img src='https://cdn-icons.flaticon.com/png/512/2668/premium/2668334.png?token=exp=1643791192~hmac=e890026dfbb893d331ec47a141a160ae' width='70px'/>
           <br></br>
         </div>
 
