@@ -269,6 +269,7 @@ function App() {
                 roomId="2"
                 name="Chambre 2"
                 etatlum={etatlum["Chambre2"]}
+                etatvol={etatvol["Chambre2"]}
               ></LightRoom>
               <div class="container">
                 <div class="row justify-content-center">
@@ -332,6 +333,7 @@ function App() {
                 roomId="3"
                 name="Cuisine"
                 etatlum={etatlum["Cuisine"]}
+                etatvol={etatvol["Cuisine"]}
               ></LightRoom>
               <div class="container">
                 <div class="row justify-content-center">
@@ -393,6 +395,7 @@ function App() {
                 roomId="4"
                 name="Salon"
                 etatlum={etatlum["Salon"]}
+                etatvol={etatvol["Salon"]}
               ></LightRoom>
               <div class="container">
                 <div class="row justify-content-center">
