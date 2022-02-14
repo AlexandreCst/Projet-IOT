@@ -48,28 +48,28 @@ function App() {
 
   //On récupère les URL pour la gestion des lumières
 
-  //var ip = "http://172.20.8.176:5000/maison/"
-  var chambre1_lon = "http://172.23.11.52:5000/maison/light/3/1"; // Led Chambre 1
-  var chambre2_lon = "http://172.23.11.52:5000/maison/light/5/1"; // Led Chambre 2
-  var cuisine_lon = "http://172.23.11.52:5000/maison/light/11/1"; // Led Cuisine
-  var salon_lon = "http://172.23.11.52:5000/maison/light/7/1"; //Led Salon
+  var ip = "http://172.23.11.52:5000/maison/"
+  var chambre1_lon = ip + "light/3/1"; // Led Chambre 1
+  var chambre2_lon = ip + "light/5/1"; // Led Chambre 2
+  var cuisine_lon = ip + "light/11/1"; // Led Cuisine
+  var salon_lon = ip + "light/7/1"; //Led Salon
 
-  var chambre1_loff = "http://172.23.11.52:5000/maison/light/3/0"; // Led Chambre 1
-  var chambre2_loff = "http://172.23.11.52:5000/maison/light/5/0"; // Led Chambre 2
-  var cuisine_loff = "http://172.23.11.52:5000/maison/light/11/0"; // Led Cuisine
-  var salon_loff = "http://172.23.11.52:5000/maison/light/7/0"; // Led Salon
+  var chambre1_loff = ip + "light/3/0"; // Led Chambre 1
+  var chambre2_loff = ip + "light/5/0"; // Led Chambre 2
+  var cuisine_loff = ip + "light/11/0"; // Led Cuisine
+  var salon_loff = ip + "light/7/0"; // Led Salon
 
   //On récupère les URL pour la gestion des lumières
 
-  var chambre1_von = "http://172.23.11.52:5000/maison/rideaux/1/1"; // Volet Chambre 1
-  var chambre2_von = "http://172.23.11.52:5000/maison/rideaux/2/1"; // Volet Chambre 2
-  var cuisine_von = "http://172.23.11.52:5000/maison/rideaux/4/1"; // Volet Cuisine
-  var salon_von = "http://172.23.11.52:5000/maison/rideaux/3/1"; // Volet Salon
+  var chambre1_von = ip + "rideaux/1/1"; // Volet Chambre 1
+  var chambre2_von = ip + "rideaux/2/1"; // Volet Chambre 2
+  var cuisine_von = ip + "rideaux/4/1"; // Volet Cuisine
+  var salon_von = ip + "rideaux/3/1"; // Volet Salon
 
-  var chambre1_voff = "http://172.23.11.52:5000/maison/rideaux/1/0"; // Volet Chambre 1
-  var chambre2_voff = "http://172.23.11.52:5000/maison/rideaux/2/0"; // Volet Chambre 2
-  var cuisine_voff = "http://172.23.11.52:5000/maison/rideaux/4/0"; // Volet Cuisine
-  var salon_voff = "http://172.23.11.52:5000/maison/rideaux/3/0"; // Volet Salon
+  var chambre1_voff = ip + "rideaux/1/0"; // Volet Chambre 1
+  var chambre2_voff = ip + "rideaux/2/0"; // Volet Chambre 2
+  var cuisine_voff = ip + "rideaux/4/0"; // Volet Cuisine
+  var salon_voff = ip + "rideaux/3/0"; // Volet Salon
 
   //On récupère les URL pour la gestion des lumières
 
@@ -85,16 +85,16 @@ function App() {
 
   //Gestion du mode automatique
 
-  var mode_automatique = "http://172.23.11.52:5000/maison/auto/1"; // activation du mode auto
-  var mode_manuel = "http://172.23.11.52:5000/maison/auto/0"; // désactivation du mode auto
+  var mode_automatique = ip + "auto/1"; // activation du mode auto
+  var mode_manuel = ip + "auto/0"; // désactivation du mode auto
 
   // Gestion centralisée des lumières
-  var lumon = "http://172.23.11.52:5000/maison/light/master/1";
-  var lumoff = "http://172.23.11.52:5000/maison/light/master/0";
+  var lumon = ip + "light/master/1";
+  var lumoff = ip + "light/master/0";
 
   // Gestion centralisée des volets
-  var volon = "http://172.23.11.52:5000/maison/rideaux/master/1";
-  var voloff = "http://172.23.11.52:5000/maison/rideaux/master/0";
+  var volon = ip + "rideaux/master/1";
+  var voloff = ip + "rideaux/master/0";
 
   return (
     <html>
