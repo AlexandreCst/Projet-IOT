@@ -11,6 +11,7 @@ function App() {
 
   const [etatlum, setEtatLum] = useState({});
   const [etatvol, setEtatVol] = useState({});
+  const [etatmode, setEtatMode] = useState({});
 
   function init_lum() {
     fetch("http://172.23.11.52:5000/maison/light").then((response) =>
@@ -30,9 +31,19 @@ function App() {
     );
   }
 
+  function init_mode() {
+    fetch("http://172.23.11.52:5000/maison/auto").then((response) =>
+      response.json().then((data) => {
+        setEtatMode(data);
+        console.log(etatmode);
+      })
+    );
+  }
+
   useEffect(() => {
     init_lum();
     init_vol();
+    init_mode();
   }, []);
 
   //On récupère les URL pour la gestion des lumières
@@ -59,6 +70,18 @@ function App() {
   var chambre2_voff = "http://172.23.11.52:5000/maison/rideaux/2/0"; // Volet Chambre 2
   var cuisine_voff = "http://172.23.11.52:5000/maison/rideaux/4/0"; // Volet Cuisine
   var salon_voff = "http://172.23.11.52:5000/maison/rideaux/3/0"; // Volet Salon
+
+  //On récupère les URL pour la gestion des lumières
+
+  var chambre1_mon = "http://172.23.11.52:5000/maison/auto/1/1"; // Volet Chambre 1
+  var chambre2_mon = "http://172.23.11.52:5000/maison/auto/2/1"; // Volet Chambre 2
+  var cuisine_mon = "http://172.23.11.52:5000/maison/auto/4/1"; // Volet Cuisine
+  var salon_mon = "http://172.23.11.52:5000/maison/auto/3/1"; // Volet Salon
+
+  var chambre1_moff = "http://172.23.11.52:5000/maison/auto/1/0"; // Volet Chambre 1
+  var chambre2_moff = "http://172.23.11.52:5000/maison/auto/2/0"; // Volet Chambre 2
+  var cuisine_moff = "http://172.23.11.52:5000/maison/auto/4/0"; // Volet Cuisine
+  var salon_moff = "http://172.23.11.52:5000/maison/auto/3/0"; // Volet Salon
 
   //Gestion du mode automatique
 
@@ -262,7 +285,6 @@ function App() {
                     ></input>
                     <br />
                     <br />
-                    <p> Mode automatique </p>
                   </div>
                   <div class="col" style={{ textAlign: "center" }}>
                     <input
@@ -287,27 +309,41 @@ function App() {
                     ></input>
                     <br />
                     <br />
-                    <input
-                      type="submit"
-                      class="btn btn-outline-secondary btn-sm position"
-                      value="Activer"
-                      onClick={() => {
-                        axios.post(chambre1_loff).then(() => {
-                          init_lum();
-                        });
-                      }}
-                    />
-                    <input
-                      type="submit"
-                      class="btn btn-outline-secondary btn-sm position"
-                      value="Désactiver"
-                      onClick={() => {
-                        axios.post(chambre1_loff).then(() => {
-                          init_lum();
-                        });
-                      }}
-                    />
                   </div>
+                </div>
+
+                <div
+                  style={{ alignContent: "center" }}
+                  class="row justify-content-center"
+                >
+                  <p>Mode automatique : {etatmode["Chambre1_mode_auto"]}</p>
+                </div>
+
+                <div
+                  style={{ alignContent: "center" }}
+                  class="row justify-content-center"
+                >
+                  <input
+                    type="submit"
+                    class="btn btn-outline-secondary btn-sm position"
+                    value="Activer"
+                    style={{ alignContent: "center" }}
+                    onClick={() => {
+                      axios.post(chambre1_mon).then(() => {
+                        init_mode();
+                      });
+                    }}
+                  />
+                  <input
+                    type="submit"
+                    class="btn btn-outline-secondary btn-sm position"
+                    value="Désactiver"
+                    onClick={() => {
+                      axios.post(chambre1_moff).then(() => {
+                        init_mode();
+                      });
+                    }}
+                  />
                 </div>
               </div>
             </div>
@@ -349,7 +385,6 @@ function App() {
                     ></input>
                     <br />
                     <br />
-                    <p> Mode automatique </p>
                   </div>
                   <div class="col" style={{ textAlign: "center" }}>
                     <input
@@ -374,28 +409,41 @@ function App() {
                     ></input>
                     <br />
                     <br />
-                    <input
-                      type="submit"
-                      class="btn btn-outline-secondary btn-sm position"
-                      value="Activer"
-                      onClick={() => {
-                        axios.post(chambre1_loff).then(() => {
-                          init_lum();
-                        });
-                      }}
-                    />
-                    <input
-                      type="submit"
-                      class="btn btn-outline-secondary btn-sm position"
-                      value="Désactiver"
-                      onClick={() => {
-                        axios.post(chambre1_loff).then(() => {
-                          init_lum();
-                        });
-                      }}
-                    />
                   </div>
                 </div>
+              </div>
+              <div
+                style={{ alignContent: "center" }}
+                class="row justify-content-center"
+              >
+                <p>Mode automatique : {etatmode["Chambre2_mode_auto"]}</p>
+              </div>
+
+              <div
+                style={{ alignContent: "center" }}
+                class="row justify-content-center"
+              >
+                <input
+                  type="submit"
+                  class="btn btn-outline-secondary btn-sm position"
+                  value="Activer"
+                  style={{ alignContent: "center" }}
+                  onClick={() => {
+                    axios.post(chambre2_mon).then(() => {
+                      init_mode();
+                    });
+                  }}
+                />
+                <input
+                  type="submit"
+                  class="btn btn-outline-secondary btn-sm position"
+                  value="Désactiver"
+                  onClick={() => {
+                    axios.post(chambre2_moff).then(() => {
+                      init_mode();
+                    });
+                  }}
+                />
               </div>
             </div>
           </div>
@@ -438,7 +486,6 @@ function App() {
                     ></input>
                     <br />
                     <br />
-                    <p> Mode automatique </p>
                   </div>
                   <div class="col" style={{ textAlign: "center" }}>
                     <input
@@ -463,27 +510,40 @@ function App() {
                     ></input>
                     <br />
                     <br />
-                    <input
-                      type="submit"
-                      class="btn btn-outline-secondary btn-sm position"
-                      value="Activer"
-                      onClick={() => {
-                        axios.post(chambre1_loff).then(() => {
-                          init_lum();
-                        });
-                      }}
-                    />
-                    <input
-                      type="submit"
-                      class="btn btn-outline-secondary btn-sm position"
-                      value="Désactiver"
-                      onClick={() => {
-                        axios.post(chambre1_loff).then(() => {
-                          init_lum();
-                        });
-                      }}
-                    />
                   </div>
+                </div>
+                <div
+                  style={{ alignContent: "center" }}
+                  class="row justify-content-center"
+                >
+                  <p>Mode automatique : {etatmode["Cuisine_mode_auto"]}</p>
+                </div>
+
+                <div
+                  style={{ alignContent: "center" }}
+                  class="row justify-content-center"
+                >
+                  <input
+                    type="submit"
+                    class="btn btn-outline-secondary btn-sm position"
+                    value="Activer"
+                    style={{ alignContent: "center" }}
+                    onClick={() => {
+                      axios.post(cuisine_mon).then(() => {
+                        init_mode();
+                      });
+                    }}
+                  />
+                  <input
+                    type="submit"
+                    class="btn btn-outline-secondary btn-sm position"
+                    value="Désactiver"
+                    onClick={() => {
+                      axios.post(cuisine_moff).then(() => {
+                        init_mode();
+                      });
+                    }}
+                  />
                 </div>
               </div>
             </div>
@@ -525,7 +585,6 @@ function App() {
                     ></input>
                     <br />
                     <br />
-                    <p> Mode automatique </p>
                   </div>
                   <div class="col" style={{ textAlign: "center" }}>
                     <input
@@ -550,28 +609,41 @@ function App() {
                     ></input>
                     <br />
                     <br />
-                    <input
-                      type="submit"
-                      class="btn btn-outline-secondary btn-sm position"
-                      value="Activer"
-                      onClick={() => {
-                        axios.post(chambre1_loff).then(() => {
-                          init_lum();
-                        });
-                      }}
-                    />
-                    <input
-                      type="submit"
-                      class="btn btn-outline-secondary btn-sm position"
-                      value="Désactiver"
-                      onClick={() => {
-                        axios.post(chambre1_loff).then(() => {
-                          init_lum();
-                        });
-                      }}
-                    />
                   </div>
                 </div>
+              </div>
+              <div
+                style={{ alignContent: "center" }}
+                class="row justify-content-center"
+              >
+                <p>Mode automatique : {etatmode["Salon_mode_auto"]}</p>
+              </div>
+
+              <div
+                style={{ alignContent: "center" }}
+                class="row justify-content-center"
+              >
+                <input
+                  type="submit"
+                  class="btn btn-outline-secondary btn-sm position"
+                  value="Activer"
+                  style={{ alignContent: "center" }}
+                  onClick={() => {
+                    axios.post(salon_mon).then(() => {
+                      init_mode();
+                    });
+                  }}
+                />
+                <input
+                  type="submit"
+                  class="btn btn-outline-secondary btn-sm position"
+                  value="Désactiver"
+                  onClick={() => {
+                    axios.post(salon_moff).then(() => {
+                      init_mode();
+                    });
+                  }}
+                />
               </div>
             </div>
           </div>
