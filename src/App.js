@@ -85,8 +85,8 @@ function App() {
 
   //Gestion du mode automatique
 
-  var mode_automatique = ip + "auto/1"; // activation du mode auto
-  var mode_manuel = ip + "auto/0"; // désactivation du mode auto
+  var mode_automatique = ip + "master/auto/1"; // activation du mode auto
+  var mode_manuel = ip + "master/auto/0"; // désactivation du mode auto
 
   // Gestion centralisée des lumières
   var lumon = ip + "light/master/1";
@@ -232,6 +232,7 @@ function App() {
                   class="btn btn-outline-secondary btn-sm position"
                   value="Activer"
                   onClick={() => axios.post(mode_automatique)}
+                  
                 ></input>
                 <input
                   type="submit"
